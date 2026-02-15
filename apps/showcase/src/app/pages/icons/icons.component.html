@@ -1,0 +1,653 @@
+<div class="container">
+  <div class="page-header">
+    <div class="breadcrumb">
+      <span class="breadcrumb-item" routerLink="/">Home</span>
+      <span class="separator">/</span>
+      <span class="breadcrumb-item active">Icons</span>
+    </div>
+    <h1>Icon Component</h1>
+    <p class="page-description">Scalable and customizable icon system with multiple configuration options</p>
+  </div>
+
+  <div class="icon-demo">
+    <!-- Size Demo -->
+    <section class="demo-section">
+      <div class="section-header">
+        <h2>Size Configuration</h2>
+        <span class="section-badge">Input</span>
+      </div>
+
+      <div class="demo-group">
+        <h3 class="demo-title">Number (auto px)</h3>
+        <div class="demo-grid">
+          <div class="demo-card" (click)="openPopup('size-16')">
+            <div class="demo-preview">
+              <fab-icon size="16">home</fab-icon>
+            </div>
+            <div class="demo-label">size="16"</div>
+          </div>
+
+          <div class="demo-card" (click)="openPopup('size-32')">
+            <div class="demo-preview">
+              <fab-icon [size]="32">search</fab-icon>
+            </div>
+            <div class="demo-label">[size]="32"</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="demo-group">
+        <h3 class="demo-title">With px unit</h3>
+        <div class="demo-grid">
+          <div class="demo-card" (click)="openPopup('size-20px')">
+            <div class="demo-preview">
+              <fab-icon size="20px">home</fab-icon>
+            </div>
+            <div class="demo-label">size="20px"</div>
+          </div>
+
+          <div class="demo-card" (click)="openPopup('size-30px')">
+            <div class="demo-preview">
+              <fab-icon size="30px">search</fab-icon>
+            </div>
+            <div class="demo-label">size="30px"</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="demo-group">
+        <h3 class="demo-title">With rem unit</h3>
+        <div class="demo-grid">
+          <div class="demo-card" (click)="openPopup('size-2rem')">
+            <div class="demo-preview">
+              <fab-icon size="2rem">home</fab-icon>
+            </div>
+            <div class="demo-label">size="2rem"</div>
+          </div>
+
+          <div class="demo-card" (click)="openPopup('size-1.5rem')">
+            <div class="demo-preview">
+              <fab-icon size="1.5rem">search</fab-icon>
+            </div>
+            <div class="demo-label">size="1.5rem"</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="demo-group warning">
+        <h3 class="demo-title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+            <line x1="12" y1="9" x2="12" y2="13"/>
+            <line x1="12" y1="17" x2="12.01" y2="17"/>
+          </svg>
+          Invalid units (defaults to 24px)
+        </h3>
+        <div class="demo-grid">
+          <div class="demo-card" (click)="openPopup('size-2em')">
+            <div class="demo-preview">
+              <fab-icon size="2em">home</fab-icon>
+            </div>
+            <div class="demo-label">size="2em"</div>
+          </div>
+
+          <div class="demo-card" (click)="openPopup('size-50vh')">
+            <div class="demo-preview">
+              <fab-icon size="50vh">search</fab-icon>
+            </div>
+            <div class="demo-label">size="50vh"</div>
+          </div>
+
+          <div class="demo-card" (click)="openPopup('size-large')">
+            <div class="demo-preview">
+              <fab-icon size="large">home</fab-icon>
+            </div>
+            <div class="demo-label">size="large"</div>
+          </div>
+
+          <div class="demo-card" (click)="openPopup('size-3percent')">
+            <div class="demo-preview">
+              <fab-icon size="3%">search</fab-icon>
+            </div>
+            <div class="demo-label">size="3%"</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="demo-group">
+        <h3 class="demo-title">Size classes</h3>
+        <div class="demo-grid">
+          <div class="demo-card" (click)="openPopup('class-xs')">
+            <div class="demo-preview">
+              <fab-icon class="fi-size-xs">home</fab-icon>
+            </div>
+            <div class="demo-label">fi-size-xs</div>
+          </div>
+
+          <div class="demo-card" (click)="openPopup('class-sm')">
+            <div class="demo-preview">
+              <fab-icon class="fi-size-sm">home</fab-icon>
+            </div>
+            <div class="demo-label">fi-size-sm</div>
+          </div>
+
+          <div class="demo-card" (click)="openPopup('class-md')">
+            <div class="demo-preview">
+              <fab-icon class="fi-size-md">home</fab-icon>
+            </div>
+            <div class="demo-label">fi-size-md</div>
+          </div>
+
+          <div class="demo-card" (click)="openPopup('class-lg')">
+            <div class="demo-preview">
+              <fab-icon class="fi-size-lg">home</fab-icon>
+            </div>
+            <div class="demo-label">fi-size-lg</div>
+          </div>
+
+          <div class="demo-card" (click)="openPopup('class-xl')">
+            <div class="demo-preview">
+              <fab-icon class="fi-size-xl">home</fab-icon>
+            </div>
+            <div class="demo-label">fi-size-xl</div>
+          </div>
+
+          <div class="demo-card highlight" (click)="openPopup('size-override')">
+            <div class="demo-preview">
+              <fab-icon class="fi-size-sm" size="40">home</fab-icon>
+            </div>
+            <div class="demo-label">Override</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Color Demo -->
+    <section class="demo-section">
+      <div class="section-header">
+        <h2>Color Configuration</h2>
+        <span class="section-badge">Input</span>
+      </div>
+
+      <div class="demo-group">
+        <h3 class="demo-title">Color parameter</h3>
+        <div class="demo-grid">
+          <div class="demo-card" (click)="openPopup('color-red')">
+            <div class="demo-preview">
+              <fab-icon color="red">home</fab-icon>
+            </div>
+            <div class="demo-label">color="red"</div>
+          </div>
+
+          <div class="demo-card" (click)="openPopup('color-hex')">
+            <div class="demo-preview">
+              <fab-icon color="#66cdf2">home</fab-icon>
+            </div>
+            <div class="demo-label">color="#66cdf2"</div>
+          </div>
+
+          <div class="demo-card" (click)="openPopup('color-rgb')">
+            <div class="demo-preview">
+              <fab-icon color="rgb(161, 61, 61)">home</fab-icon>
+            </div>
+            <div class="demo-label">color="rgb(161, 61, 61)"</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="demo-group">
+        <h3 class="demo-title">Color classes</h3>
+        <div class="demo-grid">
+          <div class="demo-card" (click)="openPopup('color-primary')">
+            <div class="demo-preview">
+              <fab-icon class="fi-color-primary">home</fab-icon>
+            </div>
+            <div class="demo-label">fi-color-primary</div>
+          </div>
+
+          <div class="demo-card" (click)="openPopup('color-secondary')">
+            <div class="demo-preview">
+              <fab-icon class="fi-color-secondary">home</fab-icon>
+            </div>
+            <div class="demo-label">fi-color-secondary</div>
+          </div>
+
+          <div class="demo-card" (click)="openPopup('color-success')">
+            <div class="demo-preview">
+              <fab-icon class="fi-color-success">home</fab-icon>
+            </div>
+            <div class="demo-label">fi-color-success</div>
+          </div>
+
+          <div class="demo-card" (click)="openPopup('color-danger')">
+            <div class="demo-preview">
+              <fab-icon class="fi-color-danger">home</fab-icon>
+            </div>
+            <div class="demo-label">fi-color-danger</div>
+          </div>
+
+          <div class="demo-card" (click)="openPopup('color-warning')">
+            <div class="demo-preview">
+              <fab-icon class="fi-color-warning">home</fab-icon>
+            </div>
+            <div class="demo-label">fi-color-warning</div>
+          </div>
+
+          <div class="demo-card" (click)="openPopup('color-info')">
+            <div class="demo-preview">
+              <fab-icon class="fi-color-info">home</fab-icon>
+            </div>
+            <div class="demo-label">fi-color-info</div>
+          </div>
+
+          <div class="demo-card" (click)="openPopup('color-light')">
+            <div class="demo-preview">
+              <fab-icon class="fi-color-light">home</fab-icon>
+            </div>
+            <div class="demo-label">fi-color-light</div>
+          </div>
+
+          <div class="demo-card" (click)="openPopup('color-dark')">
+            <div class="demo-preview">
+              <fab-icon class="fi-color-dark">home</fab-icon>
+            </div>
+            <div class="demo-label">fi-color-dark</div>
+          </div>
+
+          <div class="demo-card dark-bg" (click)="openPopup('color-white')">
+            <div class="demo-preview">
+              <fab-icon class="fi-color-white">home</fab-icon>
+            </div>
+            <div class="demo-label">fi-color-white</div>
+          </div>
+
+          <div class="demo-card" (click)="openPopup('color-black')">
+            <div class="demo-preview">
+              <fab-icon class="fi-color-black">home</fab-icon>
+            </div>
+            <div class="demo-label">fi-color-black</div>
+          </div>
+
+          <div class="demo-card highlight" (click)="openPopup('color-override')">
+            <div class="demo-preview">
+              <fab-icon class="fi-color-primary" color="#ff00ff">home</fab-icon>
+            </div>
+            <div class="demo-label">Override</div>
+          </div>
+
+          <div class="demo-card" (click)="openPopup('color-combined')">
+            <div class="demo-preview">
+              <fab-icon class="fi-color-primary fi-size-lg">home</fab-icon>
+            </div>
+            <div class="demo-label">Combined</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- States Demo -->
+    <section class="demo-section">
+      <div class="section-header">
+        <h2>State Management</h2>
+        <span class="section-badge">Boolean</span>
+      </div>
+
+      <div class="demo-group">
+        <h3 class="demo-title">Interactive states</h3>
+        <div class="demo-grid">
+          <div class="demo-card" (click)="openPopup('state-active')">
+            <div class="demo-preview">
+              <fab-icon active>home</fab-icon>
+            </div>
+            <div class="demo-label">active</div>
+          </div>
+
+          <div class="demo-card" (click)="openPopup('state-active-binding')">
+            <div class="demo-preview">
+              <fab-icon [active]="true">search</fab-icon>
+            </div>
+            <div class="demo-label">[active]="true"</div>
+          </div>
+
+          <div class="demo-card" (click)="openPopup('state-disabled')">
+            <div class="demo-preview">
+              <fab-icon disabled>home</fab-icon>
+            </div>
+            <div class="demo-label">disabled</div>
+          </div>
+
+          <div class="demo-card" (click)="openPopup('state-disabled-binding')">
+            <div class="demo-preview">
+              <fab-icon [disabled]="isDisabled">search</fab-icon>
+            </div>
+            <div class="demo-label">[disabled]="isDisabled"</div>
+          </div>
+
+          <div class="demo-card" (click)="openPopup('state-clickable')">
+            <div class="demo-preview">
+              <fab-icon clickable (click)="handleClick()">home</fab-icon>
+            </div>
+            <div class="demo-label">clickable</div>
+          </div>
+
+          <div class="demo-card" (click)="openPopup('state-clickable-binding')">
+            <div class="demo-preview">
+              <fab-icon [clickable]="true" (click)="onIconClick()">search</fab-icon>
+            </div>
+            <div class="demo-label">[clickable]="true"</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="demo-group">
+        <h3 class="demo-title">Combined states</h3>
+        <div class="demo-grid">
+          <div class="demo-card" (click)="openPopup('state-combined-1')">
+            <div class="demo-preview">
+              <fab-icon class="fi-size-lg fi-color-secondary" active>home</fab-icon>
+            </div>
+            <div class="demo-label">Size + Color + Active</div>
+          </div>
+
+          <div class="demo-card" (click)="openPopup('state-combined-2')">
+            <div class="demo-preview">
+              <fab-icon class="fi-color-danger" disabled>search</fab-icon>
+            </div>
+            <div class="demo-label">Color + Disabled</div>
+          </div>
+
+          <div class="demo-card" (click)="openPopup('state-combined-3')">
+            <div class="demo-preview">
+              <fab-icon class="fi-size-xl fi-color-success" clickable (click)="onClick()">home</fab-icon>
+            </div>
+            <div class="demo-label">Size + Color + Clickable</div>
+          </div>
+
+          <div class="demo-card warning" (click)="openPopup('state-conflict')">
+            <div class="demo-preview">
+              <fab-icon clickable disabled (click)="onClick()">search</fab-icon>
+            </div>
+            <div class="demo-label">Disabled overrides clickable</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Animations -->
+    <section class="demo-section">
+      <div class="section-header">
+        <h2>Animation Classes</h2>
+        <span class="section-badge">CSS</span>
+      </div>
+
+      <div class="demo-group">
+        <h3 class="demo-title">Built-in animations</h3>
+        <div class="demo-grid">
+          <div class="demo-card" (click)="openPopup('anim-pulse')">
+            <div class="demo-preview">
+              <fab-icon class="fi-anim-pulse">home</fab-icon>
+            </div>
+            <div class="demo-label">fi-anim-pulse</div>
+          </div>
+
+          <div class="demo-card" (click)="openPopup('anim-spin')">
+            <div class="demo-preview">
+              <fab-icon class="fi-anim-spin">search</fab-icon>
+            </div>
+            <div class="demo-label">fi-anim-spin</div>
+          </div>
+
+          <div class="demo-card" (click)="openPopup('anim-bounce')">
+            <div class="demo-preview">
+              <fab-icon class="fi-anim-bounce">home</fab-icon>
+            </div>
+            <div class="demo-label">fi-anim-bounce</div>
+          </div>
+
+          <div class="demo-card" (click)="openPopup('anim-shake')">
+            <div class="demo-preview">
+              <fab-icon class="fi-anim-shake">search</fab-icon>
+            </div>
+            <div class="demo-label">fi-anim-shake</div>
+          </div>
+
+          <div class="demo-card" (click)="openPopup('anim-fade')">
+            <div class="demo-preview">
+              <fab-icon class="fi-anim-fade">home</fab-icon>
+            </div>
+            <div class="demo-label">fi-anim-fade</div>
+          </div>
+
+          <div class="demo-card" (click)="openPopup('anim-beat')">
+            <div class="demo-preview">
+              <fab-icon class="fi-anim-beat">home</fab-icon>
+            </div>
+            <div class="demo-label">fi-anim-beat</div>
+          </div>
+
+          <div class="demo-card" (click)="openPopup('anim-flip')">
+            <div class="demo-preview">
+              <fab-icon class="fi-anim-flip">search</fab-icon>
+            </div>
+            <div class="demo-label">fi-anim-flip</div>
+          </div>
+
+          <div class="demo-card" (click)="openPopup('anim-swing')">
+            <div class="demo-preview">
+              <fab-icon class="fi-anim-swing">home</fab-icon>
+            </div>
+            <div class="demo-label">fi-anim-swing</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Transforms -->
+    <section class="demo-section">
+      <div class="section-header">
+        <h2>Transform Classes</h2>
+        <span class="section-badge">CSS</span>
+      </div>
+
+      <div class="demo-group">
+        <h3 class="demo-title">Rotation transforms</h3>
+        <div class="demo-grid">
+          <div class="demo-card" (click)="openPopup('rotate-45')">
+            <div class="demo-preview">
+              <fab-icon class="fi-transform-rotate-45">home</fab-icon>
+            </div>
+            <div class="demo-label">rotate-45</div>
+          </div>
+
+          <div class="demo-card" (click)="openPopup('rotate-90')">
+            <div class="demo-preview">
+              <fab-icon class="fi-transform-rotate-90">home</fab-icon>
+            </div>
+            <div class="demo-label">rotate-90</div>
+          </div>
+
+          <div class="demo-card" (click)="openPopup('rotate-135')">
+            <div class="demo-preview">
+              <fab-icon class="fi-transform-rotate-135">home</fab-icon>
+            </div>
+            <div class="demo-label">rotate-135</div>
+          </div>
+
+          <div class="demo-card" (click)="openPopup('rotate-180')">
+            <div class="demo-preview">
+              <fab-icon class="fi-transform-rotate-180">home</fab-icon>
+            </div>
+            <div class="demo-label">rotate-180</div>
+          </div>
+
+          <div class="demo-card" (click)="openPopup('rotate-225')">
+            <div class="demo-preview">
+              <fab-icon class="fi-transform-rotate-225">home</fab-icon>
+            </div>
+            <div class="demo-label">rotate-225</div>
+          </div>
+
+          <div class="demo-card" (click)="openPopup('rotate-270')">
+            <div class="demo-preview">
+              <fab-icon class="fi-transform-rotate-270">home</fab-icon>
+            </div>
+            <div class="demo-label">rotate-270</div>
+          </div>
+
+          <div class="demo-card" (click)="openPopup('rotate-315')">
+            <div class="demo-preview">
+              <fab-icon class="fi-transform-rotate-315">home</fab-icon>
+            </div>
+            <div class="demo-label">rotate-315</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="demo-group">
+        <h3 class="demo-title">Flip transforms</h3>
+        <div class="demo-grid">
+          <div class="demo-card" (click)="openPopup('flip-x')">
+            <div class="demo-preview">
+              <fab-icon class="fi-transform-flip-x">home</fab-icon>
+            </div>
+            <div class="demo-label">flip-x</div>
+          </div>
+
+          <div class="demo-card" (click)="openPopup('flip-y')">
+            <div class="demo-preview">
+              <fab-icon class="fi-transform-flip-y">home</fab-icon>
+            </div>
+            <div class="demo-label">flip-y</div>
+          </div>
+
+          <div class="demo-card" (click)="openPopup('flip-both')">
+            <div class="demo-preview">
+              <fab-icon class="fi-transform-flip-both">home</fab-icon>
+            </div>
+            <div class="demo-label">flip-both</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="demo-group">
+        <h3 class="demo-title">Combined transforms</h3>
+        <div class="demo-grid">
+          <div class="demo-card" (click)="openPopup('transform-combined-1')">
+            <div class="demo-preview">
+              <fab-icon class="fi-transform-flip-x fi-transform-rotate-90">home</fab-icon>
+            </div>
+            <div class="demo-label">flip-x + rotate-90</div>
+          </div>
+
+          <div class="demo-card" (click)="openPopup('transform-combined-2')">
+            <div class="demo-preview">
+              <fab-icon class="fi-transform-flip-y fi-transform-rotate-180">home</fab-icon>
+            </div>
+            <div class="demo-label">flip-y + rotate-180</div>
+          </div>
+
+          <div class="demo-card" (click)="openPopup('transform-combined-3')">
+            <div class="demo-preview">
+              <fab-icon class="fi-size-lg fi-color-primary fi-transform-rotate-90">home</fab-icon>
+            </div>
+            <div class="demo-label">size + color + rotate</div>
+          </div>
+
+          <div class="demo-card" (click)="openPopup('transform-combined-4')">
+            <div class="demo-preview">
+              <fab-icon class="fi-size-xl fi-color-danger fi-transform-flip-x">search</fab-icon>
+            </div>
+            <div class="demo-label">size + color + flip</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Layout -->
+    <section class="demo-section">
+      <div class="section-header">
+        <h2>Layout Classes</h2>
+        <span class="section-badge">CSS</span>
+      </div>
+
+      <div class="demo-group">
+        <h3 class="demo-title">Display modes</h3>
+        <div class="demo-grid">
+          <div class="demo-card" (click)="openPopup('layout-inline')">
+            <div class="demo-preview">
+              <fab-icon class="fi-layout-inline">home</fab-icon>
+            </div>
+            <div class="demo-label">fi-layout-inline</div>
+          </div>
+
+          <div class="demo-card" (click)="openPopup('layout-block')">
+            <div class="demo-preview">
+              <fab-icon class="fi-layout-block">home</fab-icon>
+            </div>
+            <div class="demo-label">fi-layout-block</div>
+          </div>
+
+          <div class="demo-card" (click)="openPopup('layout-center')">
+            <div class="demo-preview">
+              <fab-icon class="fi-layout-center">home</fab-icon>
+            </div>
+            <div class="demo-label">fi-layout-center</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dynamic Binding -->
+    <section class="demo-section">
+      <div class="section-header">
+        <h2>Dynamic Binding</h2>
+        <span class="section-badge">Advanced</span>
+      </div>
+
+      <div class="demo-group">
+        <h3 class="demo-title">Multiple property bindings</h3>
+        <div class="demo-grid">
+          <div class="demo-card full-width" (click)="openPopup('dynamic-binding')">
+            <div class="demo-preview">
+              <fab-icon 
+                [size]="32"
+                [color]="iconColor"
+                [active]="isActive"
+                [disabled]="isDisabled"
+                [clickable]="true"
+                (click)="handleIconClick()">
+                home
+              </fab-icon>
+            </div>
+            <div class="demo-label">Multiple bindings</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Popup -->
+  <div class="popup-overlay" *ngIf="selectedCode" (click)="closePopup()">
+    <div class="popup-content" (click)="$event.stopPropagation()">
+      <div class="popup-header">
+        <h3>Icon Code</h3>
+        <button class="close-btn" (click)="closePopup()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+      <div class="popup-body">
+        <pre><code>{{ selectedCode }}</code></pre>
+        <button class="copy-btn" (click)="copyCode()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+          </svg>
+          {{ copied ? 'Copied!' : 'Copy' }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="page-header">
+    <div class="breadcrumb">
+      <span class="breadcrumb-item" routerLink="/">Home</span>
+      <span class="separator">/</span>
+      <span class="breadcrumb-item active">All Icons</span>
+    </div>
+    <h1>Icon Library</h1>
+    <p class="page-description">Complete collection of available icons in Angular Fabric</p>
+    <div class="stats">
+      <div class="stat-item">
+        <span class="stat-value">{{ icons.length }}</span>
+        <span class="stat-label">Total Icons</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="icon-grid">
+    <div class="icon-card" *ngFor="let icon of icons" (click)="openPopup(icon)">
+      <div class="icon-wrapper">
+        <fab-icon>{{ icon }}</fab-icon>
+      </div>
+      <span class="icon-name">{{ icon }}</span>
+    </div>
+  </div>
+
+  <!-- Popup -->
+  <div class="popup-overlay" *ngIf="selectedIcon" (click)="closePopup()">
+    <div class="popup-content" (click)="$event.stopPropagation()">
+      <div class="popup-header">
+        <h3>{{ selectedIcon }}</h3>
+        <button class="close-btn" (click)="closePopup()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+      <div class="popup-body">
+        <div class="icon-preview">
+          <fab-icon>{{ selectedIcon }}</fab-icon>
+        </div>
+        <div class="code-section">
+          <label>HTML</label>
+          <pre><code>&lt;fab-icon&gt;{{ selectedIcon }}&lt;/fab-icon&gt;</code></pre>
+          <button class="copy-btn" (click)="copyCode()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+            </svg>
+            {{ copied ? 'Copied!' : 'Copy Code' }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

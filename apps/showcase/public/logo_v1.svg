@@ -1,0 +1,29 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  
+  <!-- Boxy icon with <fab -->
+  <g transform="translate(30, 30)">
+    <!-- Outer square border (red like OnePlus) -->
+    <rect x="0" y="0" width="140" height="140" 
+          fill="none" 
+          stroke="#DC143C" 
+          stroke-width="8" 
+          rx="8"/>
+    
+    <!-- < bracket -->
+    <path d="M 45 55 L 30 70 L 45 85" 
+          fill="none" 
+          stroke="#DC143C" 
+          stroke-width="8" 
+          stroke-linecap="round" 
+          stroke-linejoin="round"/>
+    
+    <!-- fab text -->
+    <text x="88" y="85" 
+          font-family="'Arial', sans-serif"
+          font-size="42" 
+          font-weight="300"
+          text-anchor="middle"
+          fill="#DC143C">fab</text>
+  </g>
+  
+</svg>

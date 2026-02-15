@@ -1,0 +1,367 @@
+// Global icon color fix for dark theme
+:host ::ng-deep fab-icon {
+  color: #c9d1d9;
+}
+
+.container {
+  min-height: 100vh;
+  background: #0d1117;
+  padding: 20px;
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'Consolas', monospace;
+}
+
+// Page Header
+.page-header {
+  max-width: 1400px;
+  margin: 0 auto 40px;
+  padding: 30px;
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  font-size: 13px;
+  color: #8b949e;
+
+  .breadcrumb-item {
+    cursor: pointer;
+    transition: color 0.2s;
+
+    &:hover {
+      color: #58a6ff;
+    }
+
+    &.active {
+      color: #c9d1d9;
+    }
+  }
+
+  .separator {
+    color: #30363d;
+  }
+}
+
+h1 {
+  color: #c9d1d9;
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.5px;
+}
+
+.page-description {
+  color: #8b949e;
+  font-size: 1rem;
+  margin: 0 0 20px 0;
+  line-height: 1.6;
+}
+
+.stats {
+  display: flex;
+  gap: 24px;
+  padding-top: 16px;
+  border-top: 1px solid #30363d;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  .stat-value {
+    color: #58a6ff;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .stat-label {
+    color: #8b949e;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+}
+
+// Icon Grid
+.icon-grid {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 16px;
+}
+
+// Icon Card
+.icon-card {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+
+  &:hover {
+    border-color: #58a6ff;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(88, 166, 255, 0.1);
+
+    .icon-wrapper {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  transition: transform 0.2s ease;
+
+  fab-icon {
+    font-size: 32px;
+    color: #c9d1d9;
+  }
+}
+
+.icon-name {
+  color: #8b949e;
+  font-size: 12px;
+  text-align: center;
+  word-break: break-word;
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', monospace;
+}
+
+// Popup
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.popup-content {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.popup-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  border-bottom: 1px solid #30363d;
+
+  h3 {
+    color: #c9d1d9;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0;
+    font-family: 'SF Mono', 'Monaco', monospace;
+  }
+}
+
+.close-btn {
+  background: transparent;
+  border: none;
+  color: #8b949e;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s;
+  border-radius: 4px;
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  &:hover {
+    color: #c9d1d9;
+    background: #30363d;
+  }
+}
+
+.popup-body {
+  padding: 24px;
+}
+
+.icon-preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  margin-bottom: 20px;
+
+  fab-icon {
+    font-size: 64px;
+    color: #58a6ff;
+  }
+}
+
+.code-section {
+  label {
+    display: block;
+    color: #8b949e;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+  }
+
+  pre {
+    margin: 0 0 12px 0;
+    background: #010409;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    padding: 16px;
+    overflow-x: auto;
+    font-size: 13px;
+    line-height: 1.6;
+
+    code {
+      color: #7ee787;
+      font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'Consolas', monospace;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+  }
+}
+
+.copy-btn {
+  background: #238636;
+  border: 1px solid #2ea043;
+  color: #ffffff;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  transition: all 0.2s;
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  &:hover {
+    background: #2ea043;
+    border-color: #3fb950;
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .container {
+    padding: 16px;
+  }
+
+  .page-header {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .icon-grid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 12px;
+  }
+
+  .icon-card {
+    padding: 16px;
+  }
+
+  .icon-wrapper {
+    width: 40px;
+    height: 40px;
+
+    fab-icon {
+      font-size: 28px;
+    }
+  }
+
+  .popup-content {
+    width: 95%;
+  }
+
+  .popup-header,
+  .popup-body {
+    padding: 16px;
+  }
+
+  .icon-preview {
+    padding: 30px;
+
+    fab-icon {
+      font-size: 48px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .icon-grid {
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  }
+}

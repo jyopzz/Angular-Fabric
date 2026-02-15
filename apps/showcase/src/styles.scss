@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+html, body {
+  font-family: 'Inter', sans-serif;  // Change 'Inter' if you chose another font
+  margin: 0;
+  padding: 0;
+}
+
+/* Ensure all elements inherit the font */
+* {
+  font-family: inherit;
+}
+
+fab-icon {
+  color: #c9d1d9; // Default light gray color for dark backgrounds
+}

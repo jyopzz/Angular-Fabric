@@ -1,0 +1,2 @@
+export const ALIGN_FLEX_START_ICON = `
+<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M80-800v-80h800v80H80Zm340 640v-560h120v560H420Z"/></svg>`;
