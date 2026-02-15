@@ -38,3 +38,9 @@ Angular Fabric requires the following peer dependencies:
   "@angular/core": ">=19.0.0",
   "@angular/common": ">=19.0.0"
 }
+
+
+```
+Development Env:
+
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/c5be0513-70eb-4bcc-8182-c77a482161f2" />
